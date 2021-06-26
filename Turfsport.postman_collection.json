@@ -1,0 +1,278 @@
+{
+	"info": {
+		"_postman_id": "5479f647-7913-4d67-b021-c86e0593d14b",
+		"name": "Turfsport",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getAllTickets",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/lottomachine?page=0&size=25",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"lottomachine"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "25"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SINGLE LOTTO TICKET PURCHASE",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"cashTendered\":\"20\",\n    \"type\" :\"SINGLE_LOTTO\",\n    \"lotteryNumbersDTO\": [{\n        \"lottoSelection\":[1,2,3,4,5,6]\n    }]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/lottomachine/purchase",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"lottomachine",
+						"purchase"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RANDOM LOTTO",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"cashTendered\":\"40\",\n    \"type\" :\"RANDOM_LOTTO\"\n   \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/lottomachine/purchase",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"lottomachine",
+						"purchase"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "QUICK FIVE",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"cashTendered\":\"45\",\n    \"type\" :\"QUICK_FIVE\",\n    \"lotteryNumbersDTO\": [{\n        \"lottoSelection\":[1,2,3,4,5,6]\n    },\n    {\n        \"lottoSelection\":[7,8,9,10,11,12]\n    },\n    {\n        \"lottoSelection\":[1,2,3,4,5,8]\n    },\n    {\n        \"lottoSelection\":[1,22,3,4,5,6]\n    },\n    {\n        \"lottoSelection\":[9,20,13,45,35,6]\n    }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/lottomachine/purchase",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"lottomachine",
+						"purchase"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RANDOM_FIVE",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"cashTendered\":\"40\",\n    \"type\" :\"RANDOM_FIVE\"\n   \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/lottomachine/purchase",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"lottomachine",
+						"purchase"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CancelTicket",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/lottomachine/ticket/fb745caf-1e0a-45b3-81bf-1adb3df00721",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"lottomachine",
+						"ticket",
+						"fb745caf-1e0a-45b3-81bf-1adb3df00721"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PRINT TICKET to screen",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/lottomachine/print?ticketNumber=9b4f361f-7bb0-461c-b519-086e42cdcb06",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"lottomachine",
+						"print"
+					],
+					"query": [
+						{
+							"key": "ticketNumber",
+							"value": "9b4f361f-7bb0-461c-b519-086e42cdcb06"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SINGLE LOTTO TICKET PURCHASE INSUFFICIENT FUNDS",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"cashTendered\":\"2\",\n    \"type\" :\"SINGLE_LOTTO\",\n    \"lotteryNumbersDTO\": [{\n        \"lottoSelection\":[1,2,3,4,5,6]\n    }]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/lottomachine/purchase",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"lottomachine",
+						"purchase"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SINGLE LOTTO TICKET PURCHASE invliad numbers",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"cashTendered\":\"20\",\n    \"type\" :\"SINGLE_LOTTO\",\n    \"lotteryNumbersDTO\": [{\n        \"lottoSelection\":[50,51,52,53,54,55]\n    }]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/lottomachine/purchase",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"lottomachine",
+						"purchase"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SINGLE LOTTO TICKET PURCHASE insufficient numbers",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"cashTendered\":\"20\",\n    \"type\" :\"SINGLE_LOTTO\",\n    \"lotteryNumbersDTO\": [{\n        \"lottoSelection\":[50,51,52,53,54]\n    }]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/lottomachine/purchase",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"lottomachine",
+						"purchase"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
